@@ -15,7 +15,7 @@
 package internal
 
 import (
-	. "github.com/kahing/goofys/api/common"
+	. "github.com/yoskini/goofys/api/common"
 	. "gopkg.in/check.v1"
 
 	"github.com/jacobsa/fuse"
@@ -36,7 +36,7 @@ func (s *AwsTest) SetUpSuite(t *C) {
 }
 
 func (s *AwsTest) TestRegionDetection(t *C) {
-	s.s3.bucket = "goofys-eu-west-1.kahing.xyz"
+	s.s3.bucket = "goofys-eu-west-1.yoskini.xyz"
 
 	err, isAws := s.s3.detectBucketLocationByHEAD()
 	t.Assert(err, IsNil)

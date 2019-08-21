@@ -2,13 +2,13 @@ FROM ubuntu:18.04
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
-            # s3fs dependencies \
-            automake autotools-dev fuse g++ git libcurl4-gnutls-dev libfuse-dev \
-            libssl-dev libxml2-dev make pkg-config \
-            # for running goofys benchmark \
-            curl python-setuptools python-pip gnuplot-nox imagemagick awscli \
-            # finally, clean up to make image smaller \
-            && apt-get clean
+    # s3fs dependencies \
+    automake autotools-dev fuse g++ git libcurl4-gnutls-dev libfuse-dev \
+    libssl-dev libxml2-dev make pkg-config \
+    # for running goofys benchmark \
+    curl python-setuptools python-pip gnuplot-nox imagemagick awscli \
+    # finally, clean up to make image smaller \
+    && apt-get clean
 # goofys graph generation
 RUN pip install numpy
 
@@ -30,8 +30,8 @@ RUN curl -L -O https://github.com/kahing/catfs/releases/download/v0.8.0/catfs &&
 # ideally I want to clear out all the go deps too but there's no
 # way to do that with ADD
 ENV PATH=$PATH:/root/go/bin
-ADD . /root/go/src/github.com/kahing/goofys
-WORKDIR /root/go/src/github.com/kahing/goofys
+ADD . /root/go/src/github.com/yoskini/goofys
+WORKDIR /root/go/src/github.com/yoskini/goofys
 RUN go get . && make install
 
-ENTRYPOINT ["/root/go/src/github.com/kahing/goofys/bench/run_bench.sh"]
+ENTRYPOINT ["/root/go/src/github.com/yoskini/goofys/bench/run_bench.sh"]

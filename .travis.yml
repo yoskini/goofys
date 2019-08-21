@@ -10,7 +10,7 @@ install:
 script: ./test/run-tests.sh
 go:
   - 1.11.5
-go_import_path: github.com/kahing/goofys
+go_import_path: github.com/yoskini/goofys
 matrix:
   include:
     - name: "S3Proxy"
