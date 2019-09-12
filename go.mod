@@ -27,3 +27,5 @@ require (
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
 	gopkg.in/ini.v1 v1.46.0
 )
+
+replace github.com/jacobsa/fuse => github.com/kahing/fusego v0.0.0-20190829004836-cb66eea2377f
