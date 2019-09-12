@@ -18,7 +18,7 @@ require (
 	github.com/kahing/go-xattr v1.1.1
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0
 	github.com/mitchellh/go-homedir v1.1.0
-	github.com/satori/go.uuid v0.0.0-20181028125025-8ccf535
+	github.com/satori/go.uuid v0.0.0-20181028125025-b2ce2384e17b
 	github.com/sevlyar/go-daemon v0.1.5
 	github.com/shirou/gopsutil v2.18.12+incompatible
 	github.com/sirupsen/logrus v1.4.2
